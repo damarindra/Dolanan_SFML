@@ -5,7 +5,7 @@
 		<Option title="sfml_custom"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\SFML-2.5.1\;CMake Files\..\SFML-2.5.1\lib\;CMake Files\..\SFML-2.5.1\lib\cmake\;CMake Files\..\SFML-2.5.1\lib\cmake\SFML\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\imgui-sfml\;CMake Files\imgui-sfml\cmake\;CMake Files\..\;CMake Files\..\SFML-2.5.1\;CMake Files\..\SFML-2.5.1\lib\;CMake Files\..\SFML-2.5.1\lib\cmake\;CMake Files\..\SFML-2.5.1\lib\cmake\SFML\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="D:/DamarIndra/SFML/SFML_ext/cmake-build-debug"/>
@@ -35,6 +35,9 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DSFML_STATIC"/>
+					<Add option="-DIMGUI_USER_CONFIG=&quot;imconfig-SFML.h&quot;"/>
+					<Add directory="D:/DamarIndra/SFML/SFML_ext/imgui"/>
+					<Add directory="D:/DamarIndra/SFML/SFML_ext/imgui-sfml"/>
 					<Add directory="D:/DamarIndra/SFML/SFML-2.5.1/include"/>
 					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"/>
 					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"/>
@@ -58,6 +61,9 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DSFML_STATIC"/>
+					<Add option="-DIMGUI_USER_CONFIG=&quot;imconfig-SFML.h&quot;"/>
+					<Add directory="D:/DamarIndra/SFML/SFML_ext/imgui"/>
+					<Add directory="D:/DamarIndra/SFML/SFML_ext/imgui-sfml"/>
 					<Add directory="D:/DamarIndra/SFML/SFML-2.5.1/include"/>
 					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"/>
 					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"/>
@@ -73,6 +79,26 @@
 					<DistClean command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="install/local">
+				<Option working_dir="D:/DamarIndra/SFML/SFML_ext/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="D:/DamarIndra/SFML/SFML_ext/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="D:/DamarIndra/SFML/SFML_ext/cmake-build-debug"/>
 				<Option type="4"/>
@@ -83,12 +109,114 @@
 					<DistClean command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="D:/DamarIndra/SFML/SFML_ext/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="D:/DamarIndra/SFML/SFML_ext/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ImGui-SFML">
+				<Option output="D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/imgui-sfml/libImGui-SFML.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/imgui-sfml"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DIMGUI_USER_CONFIG=&quot;imconfig-SFML.h&quot;"/>
+					<Add option="-DSFML_STATIC"/>
+					<Add directory="D:/DamarIndra/SFML/SFML_ext/imgui"/>
+					<Add directory="D:/DamarIndra/SFML/SFML_ext/imgui-sfml"/>
+					<Add directory="D:/DamarIndra/SFML/SFML-2.5.1/include"/>
+					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"/>
+					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"/>
+					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include"/>
+					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"/>
+					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/imgui-sfml/Makefile&quot;  VERBOSE=1 ImGui-SFML"/>
+					<CompileFile command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/imgui-sfml/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/imgui-sfml/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/imgui-sfml/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ImGui-SFML/fast">
+				<Option output="D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/imgui-sfml/libImGui-SFML.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/imgui-sfml"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DIMGUI_USER_CONFIG=&quot;imconfig-SFML.h&quot;"/>
+					<Add option="-DSFML_STATIC"/>
+					<Add directory="D:/DamarIndra/SFML/SFML_ext/imgui"/>
+					<Add directory="D:/DamarIndra/SFML/SFML_ext/imgui-sfml"/>
+					<Add directory="D:/DamarIndra/SFML/SFML-2.5.1/include"/>
+					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"/>
+					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"/>
+					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include"/>
+					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"/>
+					<Add directory="C:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/imgui-sfml/Makefile&quot;  VERBOSE=1 ImGui-SFML/fast"/>
+					<CompileFile command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/imgui-sfml/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/imgui-sfml/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/imgui-sfml/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
+		<Unit filename="D:/DamarIndra/SFML/SFML_ext/imgui-sfml/imgui-SFML.cpp">
+			<Option target="ImGui-SFML"/>
+		</Unit>
+		<Unit filename="D:/DamarIndra/SFML/SFML_ext/imgui-sfml/imgui-SFML.h">
+			<Option target="ImGui-SFML"/>
+		</Unit>
+		<Unit filename="D:/DamarIndra/SFML/SFML_ext/imgui/imgui.cpp">
+			<Option target="ImGui-SFML"/>
+		</Unit>
+		<Unit filename="D:/DamarIndra/SFML/SFML_ext/imgui/imgui.h">
+			<Option target="ImGui-SFML"/>
+		</Unit>
+		<Unit filename="D:/DamarIndra/SFML/SFML_ext/imgui/imgui_draw.cpp">
+			<Option target="ImGui-SFML"/>
+		</Unit>
+		<Unit filename="D:/DamarIndra/SFML/SFML_ext/imgui/imgui_widgets.cpp">
+			<Option target="ImGui-SFML"/>
+		</Unit>
+		<Unit filename="D:/DamarIndra/SFML/SFML_ext/imgui/misc/cpp/imgui_stdlib.cpp">
+			<Option target="ImGui-SFML"/>
+		</Unit>
+		<Unit filename="D:/DamarIndra/SFML/SFML_ext/imgui/misc/cpp/imgui_stdlib.h">
+			<Option target="ImGui-SFML"/>
+		</Unit>
 		<Unit filename="D:/DamarIndra/SFML/SFML_ext/main.cpp">
 			<Option target="sfml_custom"/>
 		</Unit>
 		<Unit filename="D:/DamarIndra/SFML/SFML_ext/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/DamarIndra/SFML/SFML_ext/imgui-sfml/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\imgui-sfml\"/>
+		</Unit>
+		<Unit filename="D:/DamarIndra/SFML/SFML_ext/imgui-sfml/cmake/FindImGui.cmake">
+			<Option virtualFolder="CMake Files\imgui-sfml\cmake\"/>
 		</Unit>
 		<Unit filename="D:/DamarIndra/SFML/SFML_ext/../SFML-2.5.1/lib/cmake/SFML/SFMLConfig.cmake">
 			<Option virtualFolder="CMake Files\..\SFML-2.5.1\lib\cmake\SFML\"/>
