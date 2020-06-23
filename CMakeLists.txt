@@ -17,53 +17,22 @@ list(APPEND CMAKE_PREFIX_PATH ${CMAKE_CURRENT_BINARY_DIR}/imgui-sfml/CMakeFiles/
 
 option(ENABLE_IMGUI "Enable Imgui Support" ON)
 
-# Conan is kind of deprecated, might me remove later
-option(ENABLE_CONAN "Enable Conan Setup" OFF)
+set(SFML_STATIC_LIBRARIES YES)
+find_package(SFML
+        COMPONENTS audio graphics system window network
+        REQUIRED)
 
-if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-    if(ENABLE_CONAN)
-        if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
-            message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
-            file(DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.15/conan.cmake"
-                    "${CMAKE_BINARY_DIR}/conan.cmake")
-        endif()
-
-        include(${CMAKE_BINARY_DIR}/conan.cmake)
-
-        conan_add_remote(NAME bincrafters
-                URL https://api.bintray.com/conan/bincrafters/public-conan)
-
-        conan_cmake_run(
-                REQUIRES
-                imgui-sfml/2.1@bincrafters/stable
-                BASIC_SETUP
-                BUILD missing
-        )
-
-        target_link_libraries(game
-                PRIVATE ${CONAN_LIBS})
-
-    else()
-        set(SFML_STATIC_LIBRARIES YES)
-        find_package(SFML
-                COMPONENTS audio graphics system window network
-                REQUIRED)
-
-        if(SFML_FOUND)
-            target_link_libraries(game PUBLIC sfml-audio sfml-system sfml-window sfml-network sfml-graphics)
-        endif()
-
-        if(ENABLE_IMGUI)
-            # build imgui-sfml
-            add_subdirectory(imgui-sfml)
-
-            find_package(ImGui-SFML REQUIRED)
-            target_link_libraries(game PUBLIC ImGui-SFML::ImGui-SFML)
-        endif()
-
-    endif()
+if(SFML_FOUND)
+    target_link_libraries(game PUBLIC sfml-audio sfml-system sfml-window sfml-network sfml-graphics)
 endif()
 
+if(ENABLE_IMGUI)
+    # build imgui-sfml
+    add_subdirectory(imgui-sfml)
+
+    find_package(ImGui-SFML REQUIRED)
+    target_link_libraries(game PUBLIC ImGui-SFML::ImGui-SFML)
+endif()
 
 # Very basic PCH example
 option(ENABLE_PCH "Enable Precompiled Headers" OFF)
