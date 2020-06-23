@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.16)
-project(sfml_custom)
+project(game)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
-add_executable(sfml_custom main.cpp)
+add_executable(game main.cpp)
 
 
 # Change this directory if you haven't setup sfml at environment variable
@@ -40,7 +40,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
                 BUILD missing
         )
 
-        target_link_libraries(sfml_custom
+        target_link_libraries(game
                 PRIVATE ${CONAN_LIBS})
 
     else()
@@ -50,7 +50,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
                 REQUIRED)
 
         if(SFML_FOUND)
-            target_link_libraries(sfml_custom PRIVATE sfml-main sfml-audio sfml-system sfml-window sfml-network sfml-graphics)
+            target_link_libraries(game PRIVATE sfml-main sfml-audio sfml-system sfml-window sfml-network sfml-graphics)
         endif()
 
         if(ENABLE_IMGUI)
@@ -58,7 +58,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
             add_subdirectory(imgui-sfml)
 
             find_package(ImGui-SFML REQUIRED)
-            target_link_libraries(sfml_custom PRIVATE ImGui-SFML::ImGui-SFML)
+            target_link_libraries(game PRIVATE ImGui-SFML::ImGui-SFML)
         endif()
 
     endif()
@@ -72,7 +72,7 @@ if(ENABLE_PCH)
     #
     # consider breaking this out per project as necessary
     target_precompile_headers(
-            sfml_custom
+            game
             INTERFACE
             <vector>
             <string>

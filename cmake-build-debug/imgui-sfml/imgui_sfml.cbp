@@ -5,7 +5,7 @@
 		<Option title="imgui_sfml"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\imgui-sfml\;CMake Files\imgui-sfml\cmake\;CMake Files\..\;CMake Files\..\SFML-2.5.1\;CMake Files\..\SFML-2.5.1\lib\;CMake Files\..\SFML-2.5.1\lib\cmake\;CMake Files\..\SFML-2.5.1\lib\cmake\SFML\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\SFML-2.5.1\;CMake Files\..\SFML-2.5.1\lib\;CMake Files\..\SFML-2.5.1\lib\cmake\;CMake Files\..\SFML-2.5.1\lib\cmake\SFML\;CMake Files\imgui-sfml\;CMake Files\imgui-sfml\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="D:/DamarIndra/SFML/SFML_ext/cmake-build-debug/imgui-sfml"/>
@@ -97,12 +97,6 @@
 		<Unit filename="D:/DamarIndra/SFML/SFML_ext/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="D:/DamarIndra/SFML/SFML_ext/imgui-sfml/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\imgui-sfml\"/>
-		</Unit>
-		<Unit filename="D:/DamarIndra/SFML/SFML_ext/imgui-sfml/cmake/FindImGui.cmake">
-			<Option virtualFolder="CMake Files\imgui-sfml\cmake\"/>
-		</Unit>
 		<Unit filename="D:/DamarIndra/SFML/SFML_ext/../SFML-2.5.1/lib/cmake/SFML/SFMLConfig.cmake">
 			<Option virtualFolder="CMake Files\..\SFML-2.5.1\lib\cmake\SFML\"/>
 		</Unit>
@@ -120,6 +114,12 @@
 		</Unit>
 		<Unit filename="D:/DamarIndra/SFML/SFML_ext/../SFML-2.5.1/lib/cmake/SFML/SFMLStaticTargets.cmake">
 			<Option virtualFolder="CMake Files\..\SFML-2.5.1\lib\cmake\SFML\"/>
+		</Unit>
+		<Unit filename="D:/DamarIndra/SFML/SFML_ext/imgui-sfml/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\imgui-sfml\"/>
+		</Unit>
+		<Unit filename="D:/DamarIndra/SFML/SFML_ext/imgui-sfml/cmake/FindImGui.cmake">
+			<Option virtualFolder="CMake Files\imgui-sfml\cmake\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
