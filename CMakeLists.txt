@@ -7,29 +7,44 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 add_executable(sfml_custom main.cpp)
 
 option(ENABLE_CONAN "Enable Conan Setup" OFF)
-if(ENABLE_CONAN)
+message(${CMAKE_SYSTEM_NAME})
+if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
+    if(ENABLE_CONAN)
+        if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
+            message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
+            file(DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.15/conan.cmake"
+                    "${CMAKE_BINARY_DIR}/conan.cmake")
+        endif()
 
-if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
-    message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
-    file(DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.15/conan.cmake"
-            "${CMAKE_BINARY_DIR}/conan.cmake")
-endif()
+        include(${CMAKE_BINARY_DIR}/conan.cmake)
 
-include(${CMAKE_BINARY_DIR}/conan.cmake)
+        conan_add_remote(NAME bincrafters
+                URL https://api.bintray.com/conan/bincrafters/public-conan)
 
-conan_add_remote(NAME bincrafters
-        URL https://api.bintray.com/conan/bincrafters/public-conan)
+        conan_cmake_run(
+                REQUIRES
+                imgui-sfml/2.1@bincrafters/stable
+                BASIC_SETUP
+                BUILD missing
+        )
 
-conan_cmake_run(
-        REQUIRES
-        imgui-sfml/2.1@bincrafters/stable
-        BASIC_SETUP
-        BUILD missing
-)
+        target_link_libraries(sfml_custom
+                PRIVATE ${CONAN_LIBS})
 
-target_link_libraries(sfml_custom
-        PRIVATE ${CONAN_LIBS})
+        message(gfdsgfds)
+    else()
+        set(SFML_STATIC_LIBRARIES YES)
+        set(SFML_ROOT ../SFML-2.5.1 CACHED PATH "SFML Root folder")
+        find_package(SFML
+                COMPONENTS audio graphics system window network
+                PATHS ${SFML_ROOT}
+                REQUIRED)
 
+        if(SFML_FOUND)
+            target_link_libraries(sfml_custom PRIVATE sfml-main sfml-audio sfml-system sfml-window sfml-network sfml-graphics)
+        endif()
+
+    endif()
 endif()
 
 
