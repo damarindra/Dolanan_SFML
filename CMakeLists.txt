@@ -6,34 +6,6 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 
 add_executable(game main.cpp)
 
-
-# Change this directory if you haven't setup sfml at environment variable
-set(SFML_DIR "../SFML-2.5.1" CACHE PATH "SFML Root folder")
-set(IMGUI_DIR ${CMAKE_CURRENT_SOURCE_DIR}/imgui CACHE PATH "Imgui Root folder")
-
-list(APPEND CMAKE_PREFIX_PATH ${CMAKE_CURRENT_SOURCE_DIR}/${SFML_DIR})
-# add ImGui build folder
-list(APPEND CMAKE_PREFIX_PATH ${CMAKE_CURRENT_BINARY_DIR}/imgui-sfml/CMakeFiles/Export/lib/cmake/ImGui-SFML)
-
-option(ENABLE_IMGUI "Enable Imgui Support" ON)
-
-set(SFML_STATIC_LIBRARIES YES)
-find_package(SFML
-        COMPONENTS audio graphics system window network
-        REQUIRED)
-
-if(SFML_FOUND)
-    target_link_libraries(game PUBLIC sfml-audio sfml-system sfml-window sfml-network sfml-graphics)
-endif()
-
-if(ENABLE_IMGUI)
-    # build imgui-sfml
-    add_subdirectory(imgui-sfml)
-
-    find_package(ImGui-SFML REQUIRED)
-    target_link_libraries(game PUBLIC ImGui-SFML::ImGui-SFML)
-endif()
-
 # Very basic PCH example
 option(ENABLE_PCH "Enable Precompiled Headers" OFF)
 if(ENABLE_PCH)
@@ -48,3 +20,14 @@ if(ENABLE_PCH)
             <map>
             <utility>)
 endif()
+
+
+add_subdirectory(imgui-sfml)
+
+# Aliases produced inside th ImGui-SFML cmakelists.txt which is not present here, if you want to know https://github.com/eliasdaler/imgui-sfml/blob/master/CMakeLists.txt
+target_link_libraries(game PUBLIC ImGui-SFML::ImGui-SFML)
+
+# add remaining sfml library
+target_link_libraries(game PUBLIC sfml-audio sfml-network)
+
+include(imgui-sfml/Install.cmake)
