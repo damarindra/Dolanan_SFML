@@ -1,0 +1,90 @@
+{
+ "profile_host": "[settings]\narch=x86_64\narch_build=x86_64\nbuild_type=Debug\ncompiler=gcc\ncompiler.libcxx=libstdc++11\ncompiler.version=7\nos=Windows\nos_build=Windows\n[options]\n[build_requires]\n[env]\n",
+ "graph_lock": {
+  "nodes": {
+   "0": {
+    "pref": null,
+    "options": "bzip2:build_executable=True\nbzip2:shared=False\nflac:shared=False\nfreetype:shared=False\nfreetype:with_bzip2=True\nfreetype:with_png=True\nfreetype:with_zlib=True\nimgui-sfml:imconfig=None\nimgui-sfml:imconfig_install_folder=None\nimgui-sfml:shared=False\nlibpng:api_prefix=None\nlibpng:shared=False\nogg:shared=False\nopenal:shared=False\nopengl:provider=system\nsfml:audio=True\nsfml:graphics=True\nsfml:network=True\nsfml:shared=False\nsfml:window=True\nvorbis:shared=False\nzlib:minizip=False\nzlib:shared=False",
+    "requires": [
+     "1"
+    ],
+    "path": "E:\\E_Documents\\SFML\\DolananSFML\\cmake-build-debug\\conanfile.txt"
+   },
+   "1": {
+    "pref": "imgui-sfml/2.1@bincrafters/stable#0:83c04ffe2102d4dea4f0e681cb5989e533302cca#d91bb42af1d9bdde1e720a92d89e0e96",
+    "options": "imconfig=None\nimconfig_install_folder=None\nshared=False\nbzip2:build_executable=True\nbzip2:shared=False\nflac:shared=False\nfreetype:shared=False\nfreetype:with_bzip2=True\nfreetype:with_png=True\nfreetype:with_zlib=True\nlibpng:api_prefix=None\nlibpng:shared=False\nogg:shared=False\nopenal:shared=False\nopengl:provider=system\nsfml:audio=True\nsfml:graphics=True\nsfml:network=True\nsfml:shared=False\nsfml:window=True\nvorbis:shared=False\nzlib:minizip=False\nzlib:shared=False",
+    "requires": [
+     "2"
+    ]
+   },
+   "2": {
+    "pref": "sfml/2.5.1@bincrafters/stable#0:b8aff48130cda1bd1500755e9ba5387996ab59b4#40846c18bfa6cc9a8950fd9d90425d69",
+    "options": "audio=True\ngraphics=True\nnetwork=True\nshared=False\nwindow=True\nbzip2:build_executable=True\nbzip2:shared=False\nflac:shared=False\nfreetype:shared=False\nfreetype:with_bzip2=True\nfreetype:with_png=True\nfreetype:with_zlib=True\nlibpng:api_prefix=None\nlibpng:shared=False\nogg:shared=False\nopenal:shared=False\nopengl:provider=system\nvorbis:shared=False\nzlib:minizip=False\nzlib:shared=False",
+    "requires": [
+     "3",
+     "7",
+     "8",
+     "9",
+     "10",
+     "11",
+     "12"
+    ]
+   },
+   "3": {
+    "pref": "freetype/2.10.1#0:a57345bff5d226234068648e95f0089b55f34d4e#577f5b068b4d892451d5e8a99dad22a7",
+    "options": "shared=False\nwith_bzip2=True\nwith_png=True\nwith_zlib=True\nbzip2:build_executable=True\nbzip2:shared=False\nlibpng:api_prefix=None\nlibpng:shared=False\nzlib:minizip=False\nzlib:shared=False",
+    "requires": [
+     "4",
+     "5",
+     "6"
+    ]
+   },
+   "4": {
+    "pref": "libpng/1.6.37#0:558d4796438cae7fc76830e2c4628434b52f4d35#af6a7f06f7911f71bc0235840da7d9cb",
+    "options": "api_prefix=None\nshared=False\nzlib:minizip=False\nzlib:shared=False",
+    "requires": [
+     "5"
+    ]
+   },
+   "5": {
+    "pref": "zlib/1.2.11#0:376f4274c3a3119af228c72d9387edf1acdcac48#71bb6cf83ccb078e7b8783a633621922",
+    "options": "minizip=False\nshared=False"
+   },
+   "6": {
+    "pref": "bzip2/1.0.8#0:07882334f91779fd2bf572bec87976cc7af356ec#e8e18f4eac2b925f21f35eed462334f3",
+    "options": "build_executable=True\nshared=False"
+   },
+   "7": {
+    "pref": "stb/20200203#0:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9#0",
+    "options": ""
+   },
+   "8": {
+    "pref": "openal/1.19.1#0:376f4274c3a3119af228c72d9387edf1acdcac48#615df2ddad7b1fbf2e32c711820efd29",
+    "options": "shared=False"
+   },
+   "9": {
+    "pref": "flac/1.3.3#0:79c7ee43146db01a2829f090b09bed006fa79992#af2b6e587bd1dbabc56b6c92da0b611c",
+    "options": "shared=False\nogg:shared=False",
+    "requires": [
+     "10"
+    ]
+   },
+   "10": {
+    "pref": "ogg/1.3.4#0:376f4274c3a3119af228c72d9387edf1acdcac48#194e9f50347f6ac67c91e954fa0fa1ae",
+    "options": "shared=False"
+   },
+   "11": {
+    "pref": "vorbis/1.3.6#0:76476424b135c633729fffe8c823716ca87bc10d#b1f9edc37f0446f430218fea0227d054",
+    "options": "shared=False\nogg:shared=False",
+    "requires": [
+     "10"
+    ]
+   },
+   "12": {
+    "pref": "opengl/virtual@bincrafters/stable#0:89e7a51cd797d46b5eaa2fbb360b8b1ae739d835#0",
+    "options": "provider=system"
+   }
+  }
+ },
+ "version": "0.3"
+}
