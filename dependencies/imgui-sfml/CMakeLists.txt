@@ -8,6 +8,9 @@
 # * USE_SYSTEM_DEPS - try to find dependencies using find_package (OFF by default)
 # * LINK_DEPS_STATIC - link to dependencies statically (ON by default)
 #
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.16)
 
 add_subdirectory(dependencies)
+
+
+include(Install.cmake)

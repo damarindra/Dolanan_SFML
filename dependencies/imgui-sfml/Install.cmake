@@ -1,12 +1,12 @@
 include(GNUInstallDirs)
 
-install(TARGETS game
+install(TARGETS Dolanan
         RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
         )
 
 # Installing is not easy, when we're dealing with shared libs
 if(NOT LINK_DEPS_STATIC)
-    set_target_properties(game PROPERTIES
+    set_target_properties(Dolanan PROPERTIES
             INSTALL_RPATH $ORIGIN/../${CMAKE_INSTALL_LIBDIR}
             )
 

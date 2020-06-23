@@ -4,6 +4,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
+#include <fmt/format.h>
 
 int main()
 {
@@ -31,6 +32,7 @@ int main()
 
 		ImGui::Begin("Hello, world!");
 		ImGui::Button("Look at this pretty button");
+		ImGui::Text("%s", fmt::format("This is using fmt {} : {}", 3, 6).c_str());
 		ImGui::End();
 
 		window.clear();
