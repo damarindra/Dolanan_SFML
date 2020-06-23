@@ -50,7 +50,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
                 REQUIRED)
 
         if(SFML_FOUND)
-            target_link_libraries(game PRIVATE sfml-main sfml-audio sfml-system sfml-window sfml-network sfml-graphics)
+            target_link_libraries(game PUBLIC sfml-audio sfml-system sfml-window sfml-network sfml-graphics)
         endif()
 
         if(ENABLE_IMGUI)
@@ -58,7 +58,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
             add_subdirectory(imgui-sfml)
 
             find_package(ImGui-SFML REQUIRED)
-            target_link_libraries(game PRIVATE ImGui-SFML::ImGui-SFML)
+            target_link_libraries(game PUBLIC ImGui-SFML::ImGui-SFML)
         endif()
 
     endif()
