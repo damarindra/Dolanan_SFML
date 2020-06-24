@@ -1362,15 +1362,6 @@
 		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\dependencies\"/>
 		</Unit>
-		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/imgui-sfml/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\dependencies\imgui-sfml\"/>
-		</Unit>
-		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/imgui-sfml/Install.cmake">
-			<Option virtualFolder="CMake Files\dependencies\imgui-sfml\"/>
-		</Unit>
-		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/imgui-sfml/dependencies/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\dependencies\imgui-sfml\dependencies\"/>
-		</Unit>
 		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/imgui-sfml/dependencies/sfml/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\dependencies\imgui-sfml\dependencies\sfml\"/>
 		</Unit>
@@ -1381,6 +1372,9 @@
 			<Option virtualFolder="CMake Files\dependencies\imgui-sfml\dependencies\imgui-sfml\"/>
 		</Unit>
 		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/fmt/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\dependencies\fmt\"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/fmt/Install.cmake">
 			<Option virtualFolder="CMake Files\dependencies\fmt\"/>
 		</Unit>
 		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/sfml-src/CMakeLists.txt">

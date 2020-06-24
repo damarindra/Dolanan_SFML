@@ -7,3 +7,5 @@ if (NOT fmt_POPULATED)
 
     add_subdirectory(${fmt_SOURCE_DIR} ${fmt_BINARY_DIR} EXCLUDE_FROM_ALL)
 endif ()
+
+include(Install.cmake)

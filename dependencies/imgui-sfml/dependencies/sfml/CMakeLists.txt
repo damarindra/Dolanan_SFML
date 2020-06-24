@@ -1,6 +1,7 @@
 FetchContent_GetProperties(SFML)
 
 if(NOT SFML_POPULATED)
+  message(STATUS "Fetching sfml v${SFML_VERSION}")
   if (LINK_DEPS_STATIC)
     set(SFML_STATIC_LIBRARIES CACHE BOOL TRUE)
   endif()

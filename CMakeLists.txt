@@ -1,8 +1,15 @@
 cmake_minimum_required(VERSION 3.16)
 project(Dolanan)
 
-set(CMAKE_CXX_STANDARD 20)
+if(WINDOWS)
+    set(CMAKE_CXX_STANDARD 20)
+else (APPLE)
+    set(CMAKE_CXX_STANDARD 14)
+endif()
 set(CMAKE_VERBOSE_MAKEFILE ON)
+
+# sfml linker specific
+add_link_options(-static-libgcc -static-libstdc++)
 
 add_executable(Dolanan main.cpp)
 

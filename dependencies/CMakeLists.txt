@@ -22,6 +22,8 @@ else()
     set(BUILD_SHARED_LIBS ON)
 endif()
 
+option(ENABLE_IMGUI OFF)
+option(ENABLE_FMT ON)
 
 #setup all version
 set(SFML_VERSION 2.5.1 CACHE STRING "Sfml version")
@@ -63,7 +65,9 @@ FetchContent_Declare(
 )
 
 
-add_subdirectory(imgui-sfml)
+add_subdirectory(imgui-sfml/dependencies/sfml)
+add_subdirectory(imgui-sfml/dependencies/imgui)
+add_subdirectory(imgui-sfml/dependencies/imgui-sfml)
 add_subdirectory(fmt)
 
 #======================================
@@ -76,4 +80,7 @@ target_link_libraries(Dolanan PUBLIC ImGui-SFML::ImGui-SFML)
 
 # add remaining library
 target_link_libraries(Dolanan
-        PUBLIC sfml-audio sfml-network fmt)
+        PUBLIC sfml-audio sfml-network)
+
+target_link_libraries(Dolanan
+        PUBLIC fmt)
