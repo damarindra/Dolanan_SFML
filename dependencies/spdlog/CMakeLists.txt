@@ -8,4 +8,4 @@ if (NOT spdlog_POPULATED)
     add_subdirectory(${spdlog_SOURCE_DIR} ${spdlog_BINARY_DIR} EXCLUDE_FROM_ALL)
 endif ()
 
-include(Install.cmake)
+#include(Install.cmake)

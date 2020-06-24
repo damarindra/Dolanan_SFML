@@ -5,11 +5,16 @@
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
 #include <fmt/format.h>
-
 #include "spdlog/spdlog.h"
+#include <entt/entt.hpp>
+#include <box2d/box2d.h>
+
+float box2dScalling = 10.f;
 
 int main()
 {
+	b2Vec2 gravity(0.f, -10.f);
+
     spdlog::info("Yo this is speedlog");
 	sf::RenderWindow window(sf::VideoMode(640, 480), "ImGui + SFML = <3");
 	window.setFramerateLimit(60);
