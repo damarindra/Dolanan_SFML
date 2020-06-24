@@ -5,7 +5,7 @@
 		<Option title="Dolanan"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\dependencies\;CMake Files\dependencies\imgui-sfml\;CMake Files\dependencies\imgui-sfml\dependencies\;CMake Files\dependencies\imgui-sfml\dependencies\sfml\;CMake Files\dependencies\imgui-sfml\dependencies\imgui\;CMake Files\dependencies\imgui-sfml\dependencies\imgui-sfml\;CMake Files\dependencies\fmt\;CMake Files\dependencies\spdlog\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\_deps\;CMake Files\cmake-build-debug\_deps\sfml-src\;CMake Files\cmake-build-debug\_deps\sfml-src\cmake\;CMake Files\cmake-build-debug\_deps\sfml-src\cmake\Modules\;CMake Files\cmake-build-debug\_deps\sfml-src\src\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\System\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Main\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Window\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Network\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Graphics\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Audio\;CMake Files\cmake-build-debug\_deps\imgui-sfml-src\;CMake Files\cmake-build-debug\_deps\imgui-sfml-src\cmake\;CMake Files\cmake-build-debug\_deps\fmt-src\;CMake Files\cmake-build-debug\_deps\fmt-src\support\;CMake Files\cmake-build-debug\_deps\fmt-src\support\cmake\;CMake Files\cmake-build-debug\_deps\spdlog-src\;CMake Files\cmake-build-debug\_deps\spdlog-src\cmake\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\dependencies\;CMake Files\dependencies\sfml\;CMake Files\dependencies\imgui\;CMake Files\dependencies\imgui-sfml\;CMake Files\dependencies\fmt\;CMake Files\dependencies\spdlog\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\_deps\;CMake Files\cmake-build-debug\_deps\sfml-src\;CMake Files\cmake-build-debug\_deps\sfml-src\cmake\;CMake Files\cmake-build-debug\_deps\sfml-src\cmake\Modules\;CMake Files\cmake-build-debug\_deps\sfml-src\src\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\System\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Main\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Window\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Network\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Graphics\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Audio\;CMake Files\cmake-build-debug\_deps\imgui-sfml-src\;CMake Files\cmake-build-debug\_deps\imgui-sfml-src\cmake\;CMake Files\cmake-build-debug\_deps\fmt-src\;CMake Files\cmake-build-debug\_deps\fmt-src\support\;CMake Files\cmake-build-debug\_deps\fmt-src\support\cmake\;CMake Files\cmake-build-debug\_deps\spdlog-src\;CMake Files\cmake-build-debug\_deps\spdlog-src\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="E:/E_Documents/SFML/DolananSFML/cmake-build-debug"/>
@@ -1679,14 +1679,17 @@
 		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\dependencies\"/>
 		</Unit>
-		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/imgui-sfml/dependencies/sfml/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\dependencies\imgui-sfml\dependencies\sfml\"/>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/sfml/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\dependencies\sfml\"/>
 		</Unit>
-		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/imgui-sfml/dependencies/imgui/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\dependencies\imgui-sfml\dependencies\imgui\"/>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/imgui/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\dependencies\imgui\"/>
 		</Unit>
-		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/imgui-sfml/dependencies/imgui-sfml/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\dependencies\imgui-sfml\dependencies\imgui-sfml\"/>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/imgui-sfml/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\dependencies\imgui-sfml\"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/imgui-sfml/Install.cmake">
+			<Option virtualFolder="CMake Files\dependencies\imgui-sfml\"/>
 		</Unit>
 		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/fmt/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\dependencies\fmt\"/>

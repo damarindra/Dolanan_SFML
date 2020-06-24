@@ -43,7 +43,7 @@ FetchContent_Declare(
         sfml
         URL "https://github.com/SFML/SFML/archive/${SFML_VERSION}.zip"
 )
-add_subdirectory(imgui-sfml/dependencies/sfml)
+add_subdirectory(sfml)
 
 
 if (ENABLE_IMGUI)
@@ -51,7 +51,7 @@ if (ENABLE_IMGUI)
             imgui
             URL "https://github.com/ocornut/imgui/archive/v${IMGUI_VERSION}.zip"
     )
-    add_subdirectory(imgui-sfml/dependencies/imgui)
+    add_subdirectory(imgui)
 
     # Or by tag...
     FetchContent_Declare(
@@ -63,7 +63,7 @@ if (ENABLE_IMGUI)
             # into remote to see if branch head was updated or not - good for stable
             # tags like 'vX.X' corresponding to releases
     )
-    add_subdirectory(imgui-sfml/dependencies/imgui-sfml)
+    add_subdirectory(imgui-sfml)
 
     # Aliases produced inside th ImGui-SFML cmakelists.txt which is not present here, if you want to know https://github.com/eliasdaler/imgui-sfml/blob/master/CMakeLists.txt
     target_link_libraries(Dolanan PUBLIC ImGui-SFML::ImGui-SFML)
