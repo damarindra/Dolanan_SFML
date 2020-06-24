@@ -4,10 +4,13 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/CircleShape.hpp>
-//#include <fmt/format.h>
+#include <fmt/format.h>
+
+#include "spdlog/spdlog.h"
 
 int main()
 {
+    spdlog::info("Yo this is speedlog");
 	sf::RenderWindow window(sf::VideoMode(640, 480), "ImGui + SFML = <3");
 	window.setFramerateLimit(60);
 	ImGui::SFML::Init(window);
@@ -32,7 +35,7 @@ int main()
 
 		ImGui::Begin("Hello, world!");
 		ImGui::Button("Look at this pretty button");
-//		ImGui::Text("%s", fmt::format("This is using fmt {} : {}", 3, 6).c_str());
+		ImGui::Text("%s", fmt::format("This is using fmt {} : {}", 3, 6).c_str());
 		ImGui::End();
 
 		window.clear();

@@ -5,7 +5,7 @@
 		<Option title="Dolanan"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\dependencies\;CMake Files\dependencies\imgui-sfml\;CMake Files\dependencies\imgui-sfml\dependencies\;CMake Files\dependencies\imgui-sfml\dependencies\sfml\;CMake Files\dependencies\imgui-sfml\dependencies\imgui\;CMake Files\dependencies\imgui-sfml\dependencies\imgui-sfml\;CMake Files\dependencies\fmt\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\_deps\;CMake Files\cmake-build-debug\_deps\sfml-src\;CMake Files\cmake-build-debug\_deps\sfml-src\cmake\;CMake Files\cmake-build-debug\_deps\sfml-src\cmake\Modules\;CMake Files\cmake-build-debug\_deps\sfml-src\src\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\System\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Main\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Window\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Network\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Graphics\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Audio\;CMake Files\cmake-build-debug\_deps\imgui-sfml-src\;CMake Files\cmake-build-debug\_deps\imgui-sfml-src\cmake\;CMake Files\cmake-build-debug\_deps\fmt-src\;CMake Files\cmake-build-debug\_deps\fmt-src\support\;CMake Files\cmake-build-debug\_deps\fmt-src\support\cmake\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\dependencies\;CMake Files\dependencies\imgui-sfml\;CMake Files\dependencies\imgui-sfml\dependencies\;CMake Files\dependencies\imgui-sfml\dependencies\sfml\;CMake Files\dependencies\imgui-sfml\dependencies\imgui\;CMake Files\dependencies\imgui-sfml\dependencies\imgui-sfml\;CMake Files\dependencies\fmt\;CMake Files\dependencies\spdlog\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\_deps\;CMake Files\cmake-build-debug\_deps\sfml-src\;CMake Files\cmake-build-debug\_deps\sfml-src\cmake\;CMake Files\cmake-build-debug\_deps\sfml-src\cmake\Modules\;CMake Files\cmake-build-debug\_deps\sfml-src\src\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\System\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Main\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Window\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Network\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Graphics\;CMake Files\cmake-build-debug\_deps\sfml-src\src\SFML\Audio\;CMake Files\cmake-build-debug\_deps\imgui-sfml-src\;CMake Files\cmake-build-debug\_deps\imgui-sfml-src\cmake\;CMake Files\cmake-build-debug\_deps\fmt-src\;CMake Files\cmake-build-debug\_deps\fmt-src\support\;CMake Files\cmake-build-debug\_deps\fmt-src\support\cmake\;CMake Files\cmake-build-debug\_deps\spdlog-src\;CMake Files\cmake-build-debug\_deps\spdlog-src\cmake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="E:/E_Documents/SFML/DolananSFML/cmake-build-debug"/>
@@ -27,10 +27,12 @@
 					<Add option="-DIMGUI_USER_CONFIG=&quot;imconfig-SFML.h&quot;"/>
 					<Add option="-DSFML_STATIC"/>
 					<Add option="-DFMT_LOCALE"/>
+					<Add option="-DSPDLOG_COMPILED_LIB"/>
 					<Add directory="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/imgui-src"/>
 					<Add directory="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/imgui-sfml-src"/>
 					<Add directory="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/sfml-src/include"/>
 					<Add directory="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/fmt-src/include"/>
+					<Add directory="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include"/>
 					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"/>
 					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"/>
 					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"/>
@@ -55,10 +57,12 @@
 					<Add option="-DIMGUI_USER_CONFIG=&quot;imconfig-SFML.h&quot;"/>
 					<Add option="-DSFML_STATIC"/>
 					<Add option="-DFMT_LOCALE"/>
+					<Add option="-DSPDLOG_COMPILED_LIB"/>
 					<Add directory="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/imgui-src"/>
 					<Add directory="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/imgui-sfml-src"/>
 					<Add directory="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/sfml-src/include"/>
 					<Add directory="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/fmt-src/include"/>
+					<Add directory="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include"/>
 					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"/>
 					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"/>
 					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"/>
@@ -555,6 +559,52 @@
 					<CompileFile command="E:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/fmt-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="E:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/fmt-build/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="E:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/fmt-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="spdlog">
+				<Option output="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-build/libspdlogd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-build"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSPDLOG_COMPILED_LIB"/>
+					<Add directory="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include"/>
+					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"/>
+					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"/>
+					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include"/>
+					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"/>
+					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-build/Makefile&quot;  VERBOSE=1 spdlog"/>
+					<CompileFile command="E:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-build/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="spdlog/fast">
+				<Option output="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-build/libspdlogd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-build"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DSPDLOG_COMPILED_LIB"/>
+					<Add directory="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include"/>
+					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++"/>
+					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward"/>
+					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include"/>
+					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/include-fixed"/>
+					<Add directory="E:/mingw32-7.3.0/bin/../lib/gcc/i686-w64-mingw32/7.3.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="E:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-build/Makefile&quot;  VERBOSE=1 spdlog/fast"/>
+					<CompileFile command="E:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="E:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-build/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="E:/mingw32-7.3.0/bin/mingw32-make.exe -f &quot;E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-build/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
@@ -1353,6 +1403,273 @@
 		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/sfml-src/src/SFML/Window/WindowImpl.hpp">
 			<Option target="sfml-window"/>
 		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/async.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/async_logger-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/async_logger.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/common-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/common.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/backtracer-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/backtracer.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/circular_q.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/console_globals.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/file_helper-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/file_helper.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/fmt_helper.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/log_msg-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/log_msg.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/log_msg_buffer-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/log_msg_buffer.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/mpmc_blocking_q.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/null_mutex.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/os-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/os.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/periodic_worker-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/periodic_worker.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/registry-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/registry.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/synchronous_factory.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/tcp_client-windows.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/tcp_client.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/thread_pool-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/thread_pool.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/details/windows_include.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/fmt/bin_to_hex.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/fmt/bundled/chrono.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/fmt/bundled/color.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/fmt/bundled/compile.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/fmt/bundled/core.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/fmt/bundled/format-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/fmt/bundled/format.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/fmt/bundled/locale.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/fmt/bundled/ostream.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/fmt/bundled/posix.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/fmt/bundled/printf.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/fmt/bundled/ranges.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/fmt/fmt.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/fmt/ostr.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/formatter.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/fwd.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/logger-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/logger.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/pattern_formatter-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/pattern_formatter.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/android_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/ansicolor_sink-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/ansicolor_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/base_sink-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/base_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/basic_file_sink-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/basic_file_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/daily_file_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/dist_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/dup_filter_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/msvc_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/null_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/ostream_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/ringbuffer_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/rotating_file_sink-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/rotating_file_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/sink-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/stdout_color_sinks-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/stdout_color_sinks.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/stdout_sinks-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/stdout_sinks.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/syslog_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/systemd_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/tcp_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/win_eventlog_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/wincolor_sink-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/sinks/wincolor_sink.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/spdlog-inl.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/spdlog.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/tweakme.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/include/spdlog/version.h">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/src/async.cpp">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/src/cfg.cpp">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/src/color_sinks.cpp">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/src/file_sinks.cpp">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/src/fmt.cpp">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/src/spdlog.cpp">
+			<Option target="spdlog"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/src/stdout_sinks.cpp">
+			<Option target="spdlog"/>
+		</Unit>
 		<Unit filename="E:/E_Documents/SFML/DolananSFML/main.cpp">
 			<Option target="Dolanan"/>
 		</Unit>
@@ -1376,6 +1693,12 @@
 		</Unit>
 		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/fmt/Install.cmake">
 			<Option virtualFolder="CMake Files\dependencies\fmt\"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/spdlog/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\dependencies\spdlog\"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/dependencies/spdlog/Install.cmake">
+			<Option virtualFolder="CMake Files\dependencies\spdlog\"/>
 		</Unit>
 		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/sfml-src/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\sfml-src\"/>
@@ -1433,6 +1756,15 @@
 		</Unit>
 		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/fmt-src/support/cmake/cxx14.cmake">
 			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\fmt-src\support\cmake\"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\spdlog-src\"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/cmake/ide.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\spdlog-src\cmake\"/>
+		</Unit>
+		<Unit filename="E:/E_Documents/SFML/DolananSFML/cmake-build-debug/_deps/spdlog-src/cmake/utils.cmake">
+			<Option virtualFolder="CMake Files\cmake-build-debug\_deps\spdlog-src\cmake\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
