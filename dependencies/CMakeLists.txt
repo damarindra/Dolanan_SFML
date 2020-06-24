@@ -71,7 +71,8 @@ message(STATUS "Fetching third party libraries done")
 
 # setup linking
 
-# Aliases produced inside th ImGui-SFML cmakelists.txt which is not present here, if you want to know https://github.com/eliasdaler/imgui-sfml/blob/master/CMakeLists.txt
+# Aliases produced inside th ImGui-SFML cmakelists.txt which is not present here,
+# if you want to know https://github.com/eliasdaler/imgui-sfml/blob/master/CMakeLists.txt
 target_link_libraries(Dolanan PUBLIC ImGui-SFML::ImGui-SFML)
 
 # add remaining library
