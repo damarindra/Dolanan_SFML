@@ -1,11 +1,7 @@
 cmake_minimum_required(VERSION 3.16)
 project(Dolanan)
 
-if(WINDOWS)
-    set(CMAKE_CXX_STANDARD 20)
-else (APPLE)
-    set(CMAKE_CXX_STANDARD 14)
-endif()
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
 # sfml linker specific
@@ -20,7 +16,7 @@ if(ENABLE_PCH)
     #
     # consider breaking this out per project as necessary
     target_precompile_headers(
-            game
+            Dolanan
             INTERFACE
             <vector>
             <string>
