@@ -7,9 +7,19 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 # sfml linker specific
 add_link_options(-static-libgcc -static-libstdc++)
 
-add_executable(Dolanan main.cpp
-        core/GameCycle.h scene/World.cpp scene/World.h scene/Layer.cpp scene/Layer.h scene/Actor.cpp scene/Actor.h
-        scene/Component.cpp scene/Component.h)
+add_executable(sample main.cpp)
+
+add_library(dolanan
+        core/GameCycle.h
+        scene/Component/Transform.cpp scene/Component/Transform.h)
+target_link_libraries(sample
+        PUBLIC dolanan)
+
+add_library(cute_c2 ${CMAKE_CURRENT_SOURCE_DIR}/collision2d/cute_c2.h)
+
+set_target_properties(cute_c2 PROPERTIES LINKER_LANGUAGE CXX)
+
+target_link_libraries(dolanan PRIVATE cute_c2)
 
 # Very basic PCH example
 option(ENABLE_PCH "Enable Precompiled Headers" OFF)

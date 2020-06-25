@@ -25,8 +25,9 @@ endif()
 option(ENABLE_IMGUI CACHE ON)
 option(ENABLE_FMT CACHE ON)
 option(ENABLE_SPDLOG CACHE ON)
-option(ENABLE_BOX2D CACHE ON)
+option(ENABLE_BOX2D CACHE OFF)
 option(ENABLE_ENTT CACHE ON)
+option(ENABLE_CHIPMUNK CACHE OFF)
 
 #setup all version
 set(SFML_VERSION 2.5.1 CACHE STRING "Sfml version")
@@ -71,7 +72,7 @@ if (ENABLE_IMGUI)
     add_subdirectory(imgui-sfml)
 
     # Aliases produced inside th ImGui-SFML cmakelists.txt which is not present here, if you want to know https://github.com/eliasdaler/imgui-sfml/blob/master/CMakeLists.txt
-    target_link_libraries(Dolanan PUBLIC ImGui-SFML::ImGui-SFML)
+    target_link_libraries(dolanan PUBLIC ImGui-SFML::ImGui-SFML)
 endif ()
 
 if (ENABLE_FMT)
@@ -82,7 +83,7 @@ if (ENABLE_FMT)
     )
     add_subdirectory(fmt)
 
-    target_link_libraries(Dolanan
+    target_link_libraries(dolanan
             PUBLIC fmt)
 
 endif ()
@@ -96,7 +97,7 @@ if (ENABLE_SPDLOG)
     )
     add_subdirectory(spdlog)
 
-    target_link_libraries(Dolanan
+    target_link_libraries(dolanan
             PUBLIC spdlog)
 
 endif ()
@@ -109,7 +110,7 @@ if (ENABLE_ENTT)
     )
     add_subdirectory(entt)
 
-    target_link_libraries(Dolanan
+    target_link_libraries(dolanan
             PUBLIC EnTT)
 
 endif ()
@@ -123,10 +124,19 @@ if (ENABLE_BOX2D)
     )
     add_subdirectory(box2d)
 
-    target_link_libraries(Dolanan
+    target_link_libraries(dolanan
             PUBLIC box2d)
 
 endif ()
+
+# I give up with chipmunk, it is so stupid how the cmake included in chipmunkpp work, wait until the author realize
+# fetchContent is god giver
+#if(ENABLE_CHIPMUNK)
+#    add_subdirectory(chipmunkpp)
+#
+#    target_link_directories(Dolanan
+#            PUBLIC chipmunkpp)
+#endif()
 
 
 #======================================
@@ -134,7 +144,6 @@ message(STATUS "Fetching third party libraries done")
 
 # setup linking
 
-
 # add remaining library
-target_link_libraries(Dolanan
+target_link_libraries(dolanan
         PUBLIC sfml-audio sfml-network)
