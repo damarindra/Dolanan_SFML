@@ -4,5 +4,7 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/imgui-sfml-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-release/_deps/imgui-sfml-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dependencies/chipmunkpp/chipmunkpp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/dependencies/chipmunkpp/chipmunkpp/chipmunk" vcs="Git" />
   </component>
 </project>
