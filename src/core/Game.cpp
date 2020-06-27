@@ -4,6 +4,9 @@
 
 #include "core/Game.h"
 
-// forward declare
-unique_ptr<Game> Game::_instance;
+namespace dln {
 
+// forward declare
+	unique_ptr<Game> Game::_instance;
+
+}

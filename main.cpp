@@ -10,22 +10,20 @@
 #include <component/Transform.h>
 #include "core/Game.h"
 #include "ecs/ECS.h"
+#include "scene/Actor.h"
 
 using namespace std;
-
-struct Name : public Component {
-	string name;
-};
-
-struct velocity : public Component {
-	float dx = 0, dy = 0;
-};
+using namespace dln;
 
 class RectShape : public sf::RectangleShape, public Component {
 public:
 	explicit RectShape(const sf::Vector2f &size = sf::Vector2f(0, 0)) : sf::RectangleShape(size), Component() {
 
 	}
+};
+
+struct PlayerMovement {
+	float dx, dy;
 };
 
 void update_rotation(float x) {
@@ -51,20 +49,20 @@ void update_scale(sf::Vector2f s) {
 }
 
 void update_velocity(float x, float y) {
-	auto view = dln::ECS::Instance()->registry.view<velocity>();
+	auto view = dln::ECS::Instance()->registry.view<PlayerMovement>();
 
 	for (auto entity: view) {
-		auto &vel = view.get<velocity>(entity);
+		auto &vel = view.get<PlayerMovement>(entity);
 		vel.dx = x;
 		vel.dy = y;
 	}
 }
 
 void update_position() {
-	auto view = dln::ECS::Instance()->registry.view<Transform, velocity>();
+	auto view = dln::ECS::Instance()->registry.view<Transform, PlayerMovement>();
 
 	for (auto entity: view) {
-		auto &vel = view.get<velocity>(entity);
+		auto &vel = view.get<PlayerMovement>(entity);
 		auto &tr = view.get<Transform>(entity);
 
 		if (vel.dx != 0 || vel.dy != 0) {
@@ -99,61 +97,22 @@ void draw(sf::RenderWindow &window) {
 	}
 }
 
-class actor {
-public:
-	actor(entt::entity entity, Name &name, Transform &transform) :
-			entity(entity), name(name), transform(transform) {
-
-	}
-	entt::entity get_entity() const { return entity; }
-	Transform &get_transform() const { return transform; }
-	Name &get_name() const { return name; }
-
-	template<typename Comp>
-	decltype(auto) add_component(){
-		return dln::ECS::add_component<Comp>(entity);
-	}
-
-
-protected:
-	entt::entity entity = entt::null;
-	Transform &transform;
-	Name &name;
-};
-
-class player : public actor {
-public:
-	player(entt::entity &entity, Name &name, Transform &transform, RectShape &shape, velocity& velo) :
-			shape(shape), velocity(velo), actor(entity, name, transform) {
-	}
-
-	RectShape &get_shape() const { return shape; }
-
-
-protected:
-	RectShape &shape;
-	velocity &velocity;
-};
-
-player create_player() {
-	auto et = dln::ECS::get_registry().create();
-	return player(et, dln::ECS::add_component<Name>(et),
-				  dln::ECS::add_component<Transform>(et),
-				  dln::ECS::add_component<RectShape>(et),
-				  dln::ECS::add_component<velocity>(et)
-	);
-}
-
 int main() {
-//	auto et = Game::get_registry().create();
-	player p = create_player();
-	p.get_shape().setSize(sf::Vector2f(100, 100));
+	entt::entity player_ent = ECS::get_registry().create();
+	Actor player(player_ent);
+	Transform &watch = player.get_transform();
 
-	entt::entity ae = dln::ECS::get_registry().create();
-	actor a(ae, dln::ECS::add_component<Name>(ae), dln::ECS::add_component<Transform>(ae));
-	RectShape& rs = a.add_component<RectShape>();
+	auto& r = ECS::add_component<RectShape>(player_ent);
+	r.setSize(sf::Vector2f(100, 100));
+	r.setFillColor(sf::Color::Red);
+	ECS::get_registry().emplace<PlayerMovement>(player_ent);
+//	ECS::add_component<PlayerMovement>(player_ent);
+
+	entt::entity a_ent = ECS::get_registry().create();
+	dln::Actor a(a_ent);
+	RectShape &rs = ECS::add_component<RectShape>(a_ent);
 	rs.setSize(sf::Vector2f(100, 100));
-	a.get_transform().set_parent(p.get_entity());
+	a.get_transform().set_parent(player.get_entity());
 	a.get_transform().set_position(110, 110);
 
 	float movementSpeed = 50;
@@ -208,27 +167,33 @@ int main() {
 		ImGui::Begin("Hello, world!");
 		ImGui::Button("Look at this pretty button");
 		ImGui::DragFloat("speed ", &movementSpeed);
-//		ImGui::Text("%s", fmt::format("This is using fmt {} : {}", 3, 6).c_str());
-//		ImGui::Text("%s", fmt::format("Clock {}", dt.asSeconds()).c_str());
-//		ImGui::Text("%s", fmt::format("Input {}, {}", movementInput.x, movementInput.y).c_str());
-//		ImGui::Text("%s", fmt::format("ve {}, {}", veloRaw.x, veloRaw.y).c_str());
-//		ImGui::Text("%s", fmt::format("ve {}, {}", veloRaw.x, veloRaw.y).c_str());
-//
-//		ImGui::Text("%s", fmt::format("e loc rot {}", p.get_transform().get_rotation()).c_str());
-//		ImGui::Text("%s", fmt::format("e glob rot {}", p.get_transform().get_global_rotation()).c_str());
-//		ImGui::Text("%s",
-//					fmt::format("e loc sca {}",
-//								p.get_transform().get_scale().x,
-//								p.get_transform().get_scale().y).c_str());
-//		ImGui::Text("%s",
-//					fmt::format("e glob sca {} {}",
-//								p.get_transform().get_global_scale().x,
-//								p.get_transform().get_global_scale().y).c_str());
+		ImGui::Text("%s", fmt::format("This is using fmt {} : {}", 3, 6).c_str());
+		ImGui::Text("%s", fmt::format("Clock {}", dt.asSeconds()).c_str());
+		ImGui::Text("%s", fmt::format("Input {}, {}", movementInput.x, movementInput.y).c_str());
+		ImGui::Text("%s", fmt::format("ve {}, {}", veloRaw.x, veloRaw.y).c_str());
+		ImGui::Text("%s", fmt::format("ve {}, {}", veloRaw.x, veloRaw.y).c_str());
 
-//		ImGui::Text("%s", fmt::format("c loc rot {}", child_tr.get_rotation()).c_str());
-//		ImGui::Text("%s", fmt::format("c glob rot {}", child_tr.get_global_rotation()).c_str());
-//		ImGui::Text("%s", fmt::format("c loc sca {} {}", child_tr.get_scale().x, child_tr.get_scale().y).c_str());
-//		ImGui::Text("%s", fmt::format("c glob sca {} {}", child_tr.get_global_scale().x, child_tr.get_global_scale().y).c_str());
+		ImGui::Text("%s", fmt::format("e loc rot {}", player.get_transform().get_rotation()).c_str());
+		ImGui::Text("%s", fmt::format("e glob rot {}", player.get_transform().get_global_rotation()).c_str());
+		ImGui::Text("%s",
+					fmt::format("e loc sca {} {}",
+								player.get_transform().get_scale().x,
+								player.get_transform().get_scale().y).c_str());
+		ImGui::Text("%s",
+					fmt::format("e glob sca {} {}",
+								player.get_transform().get_global_scale().x,
+								player.get_transform().get_global_scale().y).c_str());
+
+		ImGui::Text("%s", fmt::format("c loc rot {}", a.get_transform().get_rotation()).c_str());
+		ImGui::Text("%s", fmt::format("c glob rot {}", a.get_transform().get_global_rotation()).c_str());
+		ImGui::Text("%s",
+					fmt::format("c loc sca {} {}",
+								a.get_transform().get_scale().x,
+								a.get_transform().get_scale().y).c_str());
+		ImGui::Text("%s",
+					fmt::format("c glob sca {} {}",
+								a.get_transform().get_global_scale().x,
+								a.get_transform().get_global_scale().y).c_str());
 
 //		const auto& matrix = child_tr.get_global_transform().getMatrix();
 //		ImGui::Text("%s", fmt::format("sca {}, {}", child_tr.get_global_scale().x,  child_tr.get_global_scale().y).c_str());

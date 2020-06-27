@@ -7,8 +7,14 @@
 
 #include <entt/entt.hpp>
 
-struct Component{
-	entt::entity owner = entt::null;
-};
+namespace dln{
+	struct Component{
+		friend class ECS;
+	public:
+		inline entt::entity get_owner() const { return owner; }
+	private:
+		entt::entity owner = entt::null;
+	};
+}
 
 #endif //SAMPLE_INCLUDE_COMPONENT_COMPONENT_H_

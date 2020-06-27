@@ -11,17 +11,19 @@
 
 using namespace std;
 
-class Game{
-	static unique_ptr<Game> _instance;
+namespace dln {
 
-public:
-	inline static unique_ptr<Game>& Instance(){
-		if(_instance == nullptr){
-			_instance = std::make_unique<Game>();
+	class Game {
+		static unique_ptr<Game> _instance;
+
+	public:
+		inline static unique_ptr<Game> &Instance() {
+			if (_instance == nullptr) {
+				_instance = std::make_unique<Game>();
+			}
+			return _instance;
 		}
-		return _instance;
-	}
-};
+	};
 
-
+}
 #endif //DOLANAN_CORE_GAME_H_

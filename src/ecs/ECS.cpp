@@ -4,4 +4,8 @@
 
 #include "ecs/ECS.h"
 
-shared_ptr<dln::ECS> dln::ECS::_instance;
+namespace dln {
+
+	shared_ptr<dln::ECS> dln::ECS::_instance;
+
+}
