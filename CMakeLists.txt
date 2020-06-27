@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(Dolanan)
+project(sample)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_VERBOSE_MAKEFILE ON)
@@ -7,19 +7,28 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 # sfml linker specific
 add_link_options(-static-libgcc -static-libstdc++)
 
+
+#add_library(dolanan
+#        include/core/GameCycle.h include/core/Game.h
+#        src/component/Transform.cpp include/component/Transform.h
+#        src/core/Math.h src/core/Game.cpp)
+#set_target_properties(dolanan PROPERTIES LINKER_LANGUAGE CXX)
+#
+#add_library(cute_c2 src/collision2d/cute_c2.h)
+#set_target_properties(cute_c2 PROPERTIES LINKER_LANGUAGE CXX)
+#target_link_libraries(dolanan PRIVATE cute_c2)
+
+add_subdirectory(src)
+
+# Add All Dependencies
+add_subdirectory(dependencies)
+
+
 add_executable(sample main.cpp)
 
-add_library(dolanan
-        core/GameCycle.h
-        scene/Component/Transform.cpp scene/Component/Transform.h)
+
 target_link_libraries(sample
         PUBLIC dolanan)
-
-add_library(cute_c2 ${CMAKE_CURRENT_SOURCE_DIR}/collision2d/cute_c2.h)
-
-set_target_properties(cute_c2 PROPERTIES LINKER_LANGUAGE CXX)
-
-target_link_libraries(dolanan PRIVATE cute_c2)
 
 # Very basic PCH example
 option(ENABLE_PCH "Enable Precompiled Headers" OFF)
@@ -35,6 +44,3 @@ if (ENABLE_PCH)
             <map>
             <utility>)
 endif ()
-
-# Add All Dependencies
-add_subdirectory(dependencies)

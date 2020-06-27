@@ -73,6 +73,9 @@ if (ENABLE_IMGUI)
 
     # Aliases produced inside th ImGui-SFML cmakelists.txt which is not present here, if you want to know https://github.com/eliasdaler/imgui-sfml/blob/master/CMakeLists.txt
     target_link_libraries(dolanan PUBLIC ImGui-SFML::ImGui-SFML)
+else()
+    # add sfml library
+    target_link_libraries(dolanan PUBLIC sfml-system sfml-graphics sfml-window)
 endif ()
 
 if (ENABLE_FMT)
